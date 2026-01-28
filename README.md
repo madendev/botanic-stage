@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Botanic Web
 
-## Getting Started
+Landing experimental y sistema visual para **Botanic Algeciras**.
 
-First, run the development server:
+Proyecto enfocado en diseño de interfaz, motion sutil y arquitectura frontend limpia, con una estética inspirada en escenarios nocturnos, glassmorphism y tipografía de marca.
+
+---
+
+## ✨ Concepto
+
+Botanic Web no es una landing tradicional, sino un **stage visual**:
+
+- Navegación flotante en las esquinas
+- Logo central como elemento protagonista
+- Interacciones mínimas pero precisas
+- Animaciones suaves y coordinadas
+- Jerarquía tipográfica clara y reutilizable
+
+Diseñado para escalar hacia una web completa de club / eventos.
+
+---
+
+## 🧱 Stack tecnológico
+
+- **Next.js 16** (App Router + Turbopack)
+- **React + TypeScript**
+- **Tailwind CSS v4** (tokens CSS + `@theme inline`)
+- **Arquitectura basada en componentes**
+- **Animaciones CSS-first** (sin librerías externas)
+
+---
+
+## 🎨 Design system
+
+### Tipografía
+
+- **Montserrat** → identidad de marca (titles, navegación)
+- **Barlow Condensed** → impacto / acento
+- **Geist Sans** → texto base y legibilidad
+
+### UI & Motion
+
+- Glass buttons con halo radial
+- Hover “breathing” sutil
+- Animaciones de entrada secuenciales (stagger)
+- Transiciones fluidas en resize (clamp + easing)
+
+---
+
+## 🧩 Componentes clave
+
+- `BrandLogo` / `BrandLogoSvg`
+- `StageNav`
+- `StageLink`
+- `StageButton`
+- `MainStage`
+
+Todos los componentes están pensados para ser **reutilizables, declarativos y escalables**.
+
+---
+
+## 🚧 Estado del proyecto
+
+🟡 **Work in progress**
+
+Próximos pasos previstos:
+
+- Menú mobile animado
+- Secciones internas (programación, eventos, contacto)
+- Mejora de accesibilidad
+- Optimización de performance y SEO
+
+---
+
+## 🧑‍💻 Desarrollo local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir en:
+👉 http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📌 Nota
 
-## Learn More
+Este proyecto forma parte de un portfolio frontend, con foco en:
 
-To learn more about Next.js, take a look at the following resources:
+- UI engineering
+- Componentización real
+- Diseño orientado a producto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No es una plantilla ni un ejemplo básico.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🔥 Qué estás haciendo bien (y esto es importante)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Has eliminado el README genérico → ✅
+- Estás explicando **concepto**, no solo tecnología → nivel senior
+- Refleja exactamente lo que se ve en pantalla
+- Sirve para recruiter **y** para cliente
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Cuando quieras, en el próximo día podemos:
+
+- Revisarlo como si fuera un **lead frontend**
+- Ajustarlo aún más a **LinkedIn / portfolio**
+- Añadir GIFs o screenshots más adelante
+
+## 🎨 Referencias visuales y técnicas
+
+Este proyecto se apoya en distintas referencias de diseño y UI engineering que sirven como inspiración y guía conceptual:
+
+- **Gradienty**  
+  Fondos con gradientes avanzados y patrones fluidos  
+  👉 https://gradienty.codes/pattern-backgrounds
+
+- **Santa Rita Supper Disco**  
+  Referencia directa de layout, presencia escénica y navegación minimal  
+  👉 https://santaritamalaga.es/
+
+- **FlyonUI – Glassmorphism con Tailwind CSS**  
+  Base técnica para efectos glass, blur y capas translúcidas  
+  👉 https://flyonui.com/blog/glassmorphism-with-tailwind-css/
+
+- **v0 – Liquid Glass UI template**  
+  Inspiración para micro-interacciones, halos y superficies líquidas  
+  👉 https://v0.app/templates/liquid-glass-2Tyr62QLwAT
+
+> Estas referencias no se usan como plantillas directas, sino como apoyo conceptual
+> para construir una identidad propia y un sistema de componentes reutilizable.

@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
+/* {Botanic design tokens} */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* {Base colors} */
+  --color-bg-base: #000000;
+  --color-bg-deep: #14425c;
+  --color-text: #ffffff;
+  --color-text-muted: #a1a1aa;
+
+  /* {Brand accents} */
+  --color-accent-cool: #14425c;
+  --color-accent-warm: #772e1b;
+
+  /* {Main background gradient} */
+  --bg-gradient: radial-gradient(125% 125% at 50% 10%, var(--color-bg-base) 40%, var(--color-bg-deep) 100%);
 }
 
+/* {Tailwind 4 theme bindings} */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-bg-base);
+  --color-foreground: var(--color-text);
+  --color-muted: var(--color-text-muted);
+  --color-accent-cool: var(--color-accent-cool);
+  --color-accent-warm: var(--color-accent-warm);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* {Base document styles} */
+body {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  color: var(--color-text);
+  font-family: var(--font-geist-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* {Typography roles} */
+
+/* {Brand / Hero / H1} */
+.font-brand {
+  font-family: var(--font-montserrat);
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+/* {UI / Navigation / Buttons} */
+.font-ui {
+  font-family: var(--font-montserrat);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* {Accent / Impact elements} */
+.font-accent {
+  font-family: var(--font-barlow-condensed);
+  letter-spacing: 0.08em;
+}
+
+/* {Body text} */
+.font-body {
+  font-family: var(--font-geist-sans);
+}
+
+/* {Stage motion primitives} */
+@keyframes stageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-stage-fade-in {
+  opacity: 0;
+  animation: stageFadeIn 0.9s ease-out forwards;
 }
