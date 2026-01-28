@@ -1,30 +1,30 @@
-/* {StageLink – navigation link with brand tracking control} */
 type StageLinkProps = {
   href: string;
   label: string;
+  onClick?: () => void;
   className?: string;
 };
 
-export default function StageLink({ href, label, className = "" }: StageLinkProps) {
-  const lastChar = label.slice(-1);
-  const rest = label.slice(0, -1);
-
+/* {StageLink – spaced navigation link} */
+export default function StageLink({ href, label, onClick, className = "" }: StageLinkProps) {
   return (
     <a
       href={href}
+      onClick={onClick}
       className={`
         font-ui
+        uppercase
+        tracking-[0.8em]
         text-lg
-        font-medium
-        text-white/75
+        text-white/80
         hover:text-white
         transition
-        tracking-[0.8em]
+        cursor-pointer
         ${className}
       `}
     >
-      {rest}
-      <span className="tracking-normal">{lastChar}</span>
+      {label.slice(0, -1)}
+      <span className="tracking-normal">{label.slice(-1)}</span>
     </a>
   );
 }

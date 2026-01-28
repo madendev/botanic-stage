@@ -1,46 +1,55 @@
-import StageLink from "./StageLink";
+"use client";
 
-/* {Stage navigation – refined presence version} */
+import { useState, useEffect } from "react";
+import StageLink from "./StageLink";
+import MobileMenu from "./MobileMenu";
+
+/* {Stage navigation – desktop + mobile controller} */
 export default function StageNav() {
+  console.log("StageNav render");
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    console.log("isMenuOpen:", isMenuOpen);
+  }, [isMenuOpen]);
+
   return (
     <>
-      {/* {Mobile menu icon – visible until lg} */}
-      <div className="fixed top-6 right-6 z-30 block lg:hidden">
-        <button aria-label="Open menu" className="font-ui text-white/90 hover:text-white transition text-3xl">
+      {/* {Mobile menu icon} */}
+      <div className="fixed top-6 right-6 z-100 block lg:hidden">
+        <button
+          aria-label="Open menu"
+          onClick={() => {
+            console.log("MENU BUTTON CLICK");
+            setIsMenuOpen(true);
+          }}
+          className="
+            font-ui
+            text-white
+            text-3xl
+            cursor-pointer
+            hover:scale-110
+            transition
+          "
+        >
           ☰
         </button>
       </div>
 
-      {/* {Desktop navigation – visible from lg} */}
+      {/* {Mobile menu overlay} */}
+      <MobileMenu
+        isOpen={isMenuOpen}
+        onClose={() => {
+          console.log("MENU CLOSE");
+          setIsMenuOpen(false);
+        }}
+      />
+
+      {/* {Desktop navigation} */}
       <div className="hidden lg:block">
-        {/* {Top left} */}
         <nav className="fixed top-10 left-12 z-20">
           <StageLink href="#eventos" label="EVENTOS" />
-        </nav>
-
-        {/* {Top center} */}
-        <nav className="fixed top-10 left-1/2 -translate-x-1/2 z-20">
-          <StageLink href="#entradas" label="ENTRADAS Y RESERVAS" />
-        </nav>
-
-        {/* {Top right} */}
-        <nav className="fixed top-10 right-12 z-20">
-          <StageLink href="#about" label="ABOUT" />
-        </nav>
-
-        {/* {Bottom left} */}
-        <nav className="fixed bottom-10 left-12 z-20">
-          <StageLink href="#preguntas" label="PREGUNTAS" />
-        </nav>
-
-        {/* {Bottom center} */}
-        <nav className="fixed bottom-10 left-1/2 -translate-x-1/2 z-20">
-          <StageLink href="#privados" label="EVENTOS PRIVADOS" />
-        </nav>
-
-        {/* {Bottom right} */}
-        <nav className="fixed bottom-10 right-12 z-20">
-          <StageLink href="#contacto" label="CONTACTO" />
         </nav>
       </div>
     </>

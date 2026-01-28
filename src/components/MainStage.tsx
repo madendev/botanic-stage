@@ -1,4 +1,5 @@
-import { BrandLogo, StageButton } from "@/components";
+import BrandLogo from "./brand/BrandLogo";
+import StageButton from "./navigation/StageButton";
 
 /* {Main stage – centered brand + actions} */
 export default function MainStage() {
