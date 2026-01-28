@@ -1,22 +1,28 @@
 @import "tailwindcss";
 
-/* {Botanic design tokens} */
+/* {===============================================} */
+/* {BOTANIC – Design Tokens & Global Styles} */
+/* {===============================================} */
+
+/* {CSS Variables – Paleta de colores y gradientes} */
 :root {
-  /* {Base colors} */
+  /* {Colores base del fondo} */
   --color-bg-base: #000000;
   --color-bg-deep: #14425c;
+
+  /* {Colores de texto} */
   --color-text: #ffffff;
   --color-text-muted: #a1a1aa;
 
-  /* {Brand accents} */
-  --color-accent-cool: #14425c;
-  --color-accent-warm: #772e1b;
+  /* {Acentos de marca} */
+  --color-accent-cool: #14425c; /* {Azul nocturno} */
+  --color-accent-warm: #772e1b; /* {Rojo terroso} */
 
-  /* {Main background gradient} */
+  /* {Gradiente principal – fondo del sitio} */
   --bg-gradient: radial-gradient(125% 125% at 50% 10%, var(--color-bg-base) 40%, var(--color-bg-deep) 100%);
 }
 
-/* {Tailwind 4 theme bindings} */
+/* {Tailwind 4 – Bindings de tema} */
 @theme inline {
   --color-background: var(--color-bg-base);
   --color-foreground: var(--color-text);
@@ -25,7 +31,7 @@
   --color-accent-warm: var(--color-accent-warm);
 }
 
-/* {Base document styles} */
+/* {Estilos base del documento} */
 body {
   min-height: 100vh;
   background: var(--bg-gradient);
@@ -35,9 +41,11 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* {Typography roles} */
+/* {===============================================} */
+/* {TIPOGRAFÍA – Roles y usos específicos} */
+/* {===============================================} */
 
-/* {Brand / Hero / H1} */
+/* {Marca / Hero / Títulos principales (H1)} */
 .font-brand {
   font-family: var(--font-montserrat);
   letter-spacing: 1em;
@@ -45,25 +53,29 @@ body {
   font-weight: 300;
 }
 
-/* {UI / Navigation / Buttons} */
+/* {UI / Navegación / Botones} */
 .font-ui {
   font-family: var(--font-montserrat);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-/* {Accent / Impact elements} */
+/* {Acentos / Elementos de impacto} */
 .font-accent {
   font-family: var(--font-barlow-condensed);
   letter-spacing: 0.08em;
 }
 
-/* {Body text} */
+/* {Body text – párrafos y contenido} */
 .font-body {
   font-family: var(--font-geist-sans);
 }
 
-/* {Stage motion primitives} */
+/* {===============================================} */
+/* {ANIMACIONES – Motion Primitives} */
+/* {===============================================} */
+
+/* {Fade-in con slide-up – entrada suave y elegante} */
 @keyframes stageFadeIn {
   from {
     opacity: 0;
@@ -75,6 +87,7 @@ body {
   }
 }
 
+/* {Clase de utilidad para fade-in animado} */
 .animate-stage-fade-in {
   opacity: 0;
   animation: stageFadeIn 0.9s ease-out forwards;

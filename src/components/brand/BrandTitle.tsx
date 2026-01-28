@@ -1,29 +1,32 @@
 import type { ReactNode } from "react";
 
-/* {BrandTitleProps: permite reutilizar el título de marca en distintos contextos (hero, secciones, overlays, etc.)} */
+/* {Props del componente BrandTitle} */
 type BrandTitleProps = {
-  /* {Texto del título, por defecto "BOTANIC"} */
+  /* {Contenido del título (por defecto: "BOTANIC")} */
   children?: ReactNode;
 
-  /* {Elemento semántico a renderizar: h1 para hero, h2/h3 para secciones} */
+  /* {Elemento HTML semántico: h1 para hero, h2/h3 para secciones} */
   as?: "h1" | "h2" | "h3";
 
-  /* {Clases adicionales para controlar tamaño, responsive, márgenes, etc.} */
+  /* {Clases Tailwind adicionales (tamaño responsive, márgenes, etc.)} */
   className?: string;
 };
 
-/* {BrandTitle: componente de identidad tipográfica de la marca Botanic} */
-/* {Usa Montserrat con tracking elevado y corrige el espaciado del último carácter} */
-/* {Pensado para títulos principales donde la identidad visual es prioritaria} */
+/* {BrandTitle – identidad tipográfica de marca} */
+/* {Responsable de: renderizar título con tracking premium y corrección de espaciado} */
+/* {Usa Montserrat (font-brand) con tracking de 1em, corrigiendo último carácter} */
+/* {Reutilizable en: hero, secciones, overlays, contextos donde la identidad es prioritaria} */
 export default function BrandTitle({ children = "BOTANIC", as: Tag = "h1", className = "" }: BrandTitleProps) {
-  /* {Separamos el último carácter para evitar que letter-spacing deje espacio sobrante} */
+  /* {Convierte children a string (si no lo es) para manipulación de caracteres} */
   const text = typeof children === "string" ? children : "BOTANIC";
+  /* {Separa último carácter para corregir espaciado excesivo por letter-spacing} */
   const base = text.slice(0, -1);
   const last = text.slice(-1);
 
   return (
     <Tag className={`font-brand ${className}`}>
       {base}
+      {/* {Último carácter sin tracking (tracking-normal)} */}
       <span className="tracking-normal">{last}</span>
     </Tag>
   );

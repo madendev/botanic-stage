@@ -1,4 +1,6 @@
-/* {BrandLogoSvg – raw SVG logo, no layout, no motion} */
+/* {BrandLogoSvg – Logo SVG puro de la marca} */
+/* {Responsable de: renderizar solo el SVG, sin lógica, sin layout} */
+/* {Escala: responsiva mediante contenedor padre (clamp)} */
 export default function BrandLogoSvg() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 657 261.14" aria-hidden="true">

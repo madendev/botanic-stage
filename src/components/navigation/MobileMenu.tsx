@@ -1,30 +1,61 @@
 "use client";
 
+import { useEffect } from "react";
 import StageLink from "./StageLink";
 
+/* {Props del menú mobile} */
 type MobileMenuProps = {
+  /* {Estado: abierto/cerrado} */
   isOpen: boolean;
+  /* {Callback para cerrar el menú} */
   onClose: () => void;
+  /* {Callback para cierre por tecla Escape} */
+  onEscape: () => void;
 };
 
-/* {MobileMenu – fullscreen glass navigation} */
-export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+/* {MobileMenu – overlay fullscreen con navegación} */
+/* {Responsable de: menú superpuesto, backdrop con blur, enlaces de navegación} */
+/* {Cierres: backdrop click, botón X, enlaces, tecla Escape} */
+/* {Visible: solo en pantallas < lg (1024px)} */
+export default function MobileMenu({ isOpen, onClose, onEscape }: MobileMenuProps) {
+  /* {Maneja cierre con tecla Escape} */
+  // {Cierra menú con tecla Escape}
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onEscape();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen, onEscape]);
+
   if (!isOpen) return null;
+
+  const handleLinkClick = () => {
+    onClose();
+  };
 
   return (
     <div className="fixed inset-0 z-200 lg:hidden">
-      {/* {Backdrop} */}
+      {/* {Backdrop semi-opaco con blur – cierra al click} */}
       <div
         className="
           absolute inset-0
           bg-black/70
           backdrop-blur-xl
-          cursor-pointer
         "
         onClick={onClose}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === "Enter" && onClose()}
+        aria-label="Close menu"
       />
 
-      {/* {Menu content} */}
+      {/* {Contenido del menú – enlaces de navegación} */}
       <nav
         className="
           relative z-10
@@ -33,13 +64,13 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           gap-8
         "
       >
-        <StageLink href="#eventos" label="EVENTOS" onClick={onClose} />
-        <StageLink href="#entradas" label="ENTRADAS" onClick={onClose} />
-        <StageLink href="#privados" label="EVENTOS PRIVADOS" onClick={onClose} />
-        <StageLink href="#contacto" label="CONTACTO" onClick={onClose} />
+        <StageLink href="#eventos" label="EVENTOS" onClick={handleLinkClick} />
+        <StageLink href="#entradas" label="ENTRADAS" onClick={handleLinkClick} />
+        <StageLink href="#privados" label="EVENTOS PRIVADOS" onClick={handleLinkClick} />
+        <StageLink href="#contacto" label="CONTACTO" onClick={handleLinkClick} />
       </nav>
 
-      {/* {Close button} */}
+      {/* {Botón de cierre (X) – esquina superior derecha} */}
       <button
         aria-label="Close menu"
         onClick={onClose}

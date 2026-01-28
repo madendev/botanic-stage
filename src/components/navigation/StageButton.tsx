@@ -1,12 +1,21 @@
+/* {Props del botón de acción} */
 type StageButtonProps = {
+  /* {Texto del botón} */
   label: string;
+  /* {URL destino} */
   href: string;
+  /* {Variante visual: primary (destacado) o secondary (sutil)} */
   variant?: "primary" | "secondary";
+  /* {Delay en ms para animación de entrada} */
   delay?: number;
+  /* {Target del enlace: mismo tab o nueva ventana} */
   target?: "_self" | "_blank";
 };
 
-/* {StageButton – glass action with halo + motion-ready} */
+/* {StageButton – botón de acción con efecto glass + halo} */
+/* {Responsable de: acciones CTA (Entradas, Reservas)} */
+/* {Animación: fade-in con delay + hover con glow efecto} */
+/* {Visible: solo en dispositivos móviles (< lg)} */
 export default function StageButton({ label, href, variant = "secondary", delay = 0, target = "_self" }: StageButtonProps) {
   const isPrimary = variant === "primary";
   const isExternal = target === "_blank";
@@ -39,7 +48,7 @@ export default function StageButton({ label, href, variant = "secondary", delay 
         }
       `}
     >
-      {/* {Halo glow} */}
+      {/* {Efecto de halo/glow al hover} */}
       <span
         className={`
           pointer-events-none
@@ -50,7 +59,7 @@ export default function StageButton({ label, href, variant = "secondary", delay 
         `}
       />
 
-      {/* {Label with last-letter spacing fix} */}
+      {/* {Etiqueta con corrección de espaciado en último carácter} */}
       <span className="relative z-10 inline-block">
         {label.slice(0, -1)}
         <span className="tracking-normal">{label.slice(-1)}</span>

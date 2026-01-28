@@ -1,10 +1,14 @@
 import BrandLogoSvg from "./BrandLogoSvg";
 
+/* {Props del componente BrandLogo} */
 type BrandLogoProps = {
+  /* {Delay en ms para la animación de entrada (fade-in)} */
   delay?: number;
 };
 
-/* {BrandLogo – animated wrapper for brand SVG} */
+/* {BrandLogo – wrapper animado del SVG de marca} */
+/* {Responsable de: escala fluida, transiciones suaves, entrada animada} */
+/* {Animación: fade-in con delay configurable} */
 export default function BrandLogo({ delay = 0 }: BrandLogoProps) {
   return (
     <div
@@ -18,7 +22,7 @@ export default function BrandLogo({ delay = 0 }: BrandLogoProps) {
     animate-stage-fade-in
       "
     >
-      {/* {Logo container – fluid scale, smooth resize} */}
+      {/* {Contenedor del logo – escala fluida con clamp} */}
       <div
         className="
        fill-current

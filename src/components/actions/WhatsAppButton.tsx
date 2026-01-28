@@ -1,4 +1,7 @@
-/* {Floating WhatsApp button – global action} */
+/* {WhatsAppButton – botón flotante de contacto} */
+/* {Responsable de: enlace directo a WhatsApp} */
+/* {Ubicación: esquina inferior derecha (fixed bottom-6 right-6)} */
+/* {Siempre visible en todas las resoluciones} */
 export default function WhatsAppButton() {
   return (
     <a

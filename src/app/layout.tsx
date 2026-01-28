@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 /* {Layout raíz de la aplicación} */
+/* {Responsable de: inyectar variables de fuentes, estilos globales, estructura HTML base} */
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="es">
