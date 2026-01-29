@@ -112,7 +112,7 @@ export default function SiteMenu({ isOpen, onClose, onEscape }: SiteMenuProps) {
           {/* {Iconos de redes sociales} */}
           <div className="flex gap-4">
             {socialLinks.map(social => (
-              <SocialIcon key={social.key} social={social} />
+              <SocialIcon key={social.id} social={social} />
             ))}
           </div>
         </div>
