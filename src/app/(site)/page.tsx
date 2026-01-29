@@ -1,11 +1,16 @@
+import { Metadata } from 'next';
 import WhatsAppButton from '@/components/actions/WhatsAppButton';
 import MainStage from '@/components/MainStage';
 import StageNav from '@/components/navigation/StageNav';
 import HomeFooter from '@/components/home/HomeFooter';
+import { buildPageMetadata } from '@/lib/metadata';
 
 /* {Página principal (home)} */
 /* {Orquesta los componentes principales: navegación, stage y acciones globales} */
 /* {Estructura: StageNav (fija) > MainStage (hero) > WhatsAppButton (flotante)} */
+
+export const metadata: Metadata = buildPageMetadata('home');
+
 export default function HomePage() {
   return (
     <>
