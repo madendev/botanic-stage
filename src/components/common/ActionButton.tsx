@@ -1,5 +1,5 @@
 /* {Props del botón de acción} */
-type StageButtonProps = {
+type ActionButtonProps = {
   /* {Texto del botón} */
   label: string;
   /* {URL destino} */
@@ -10,13 +10,14 @@ type StageButtonProps = {
   delay?: number;
   /* {Target del enlace: mismo tab o nueva ventana} */
   target?: '_self' | '_blank';
+  /* {Clases Tailwind adicionales} */
+  className?: string;
 };
 
-/* {StageButton – botón de acción con efecto glass + halo} */
-/* {Responsable de: acciones CTA (Entradas, Reservas)} */
-/* {Animación: fade-in con delay + hover con glow efecto} */
-/* {Visible: solo en dispositivos móviles (< lg)} */
-export default function StageButton({ label, href, variant = 'secondary', delay = 0, target = '_self' }: StageButtonProps) {
+/* {ActionButton – botón de acción reutilizable con efecto glass + halo} */
+/* {Responsable de: acciones CTA con estilos consistentes} */
+/* {Animación: fade-in con delay opcional + hover con glow efecto} */
+export default function ActionButton({ label, href, variant = 'secondary', delay = 0, target = '_self', className = '' }: ActionButtonProps) {
   const isPrimary = variant === 'primary';
   const isExternal = target === '_blank';
 
@@ -26,9 +27,9 @@ export default function StageButton({ label, href, variant = 'secondary', delay 
       target={target}
       rel={isExternal ? 'noopener noreferrer' : undefined}
       style={{ animationDelay: `${delay}ms` }}
-      className={`group font-ui animate-stage-fade-in relative rounded-full border px-9 py-2 leading-none tracking-[0.28em] uppercase backdrop-blur-md transition-all duration-500 lg:hidden ${
+      className={`group font-ui relative rounded-full border leading-none tracking-[0.28em] uppercase backdrop-blur-md transition-all duration-500 ${
         isPrimary ? 'border-white/60 bg-white/10 text-white hover:bg-white/20' : 'border-white/30 text-white/80 hover:border-white/60 hover:text-white'
-      } `}>
+      } ${delay > 0 ? 'animate-stage-fade-in' : ''} ${className}`}>
       {/* {Efecto de halo/glow al hover} */}
       <span
         className={`pointer-events-none absolute inset-0 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${isPrimary ? 'shadow-[0_0_40px_rgba(255,255,255,0.35)]' : 'shadow-[0_0_28px_rgba(255,255,255,0.18)]'} `}

@@ -21,7 +21,7 @@ export default function BrandLogo({ delay = 0 }: BrandLogoProps) {
           width: 'clamp(260px, 65vw, 420px)',
         }}>
         <BrandIsologoSvg className="size-28" />
-        <BrandTitle className="text-[38px]" as="h1">
+        <BrandTitle className="mr-2 text-[38px]" as="h1">
           Botanic
         </BrandTitle>
         <BrandSubtitle className="text-[10px] font-bold" as="h3">

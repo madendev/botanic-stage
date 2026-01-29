@@ -1,15 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import StageLink from './StageLink';
-import MobileMenu from './MobileMenu';
-import HamburgerButton from './HamburgerButton';
+import StageLink from '../navigation/StageLink';
+import SiteMenu from '../navigation/SiteMenu';
+import HamburgerButton from '../navigation/HamburgerButton';
 import { stageNavLinks } from '@/data/navigation';
 
-/* {Stage navigation – controlador de navegación desktop + mobile} */
+/* {HomeStageNav – controlador de navegación desktop + mobile para home} */
 /* {Responsable de: gestionar estado del menú, toggle de scroll body} */
-/* {Renderiza: HamburgerButton (mobile), MobileMenu overlay, Desktop nav (lg+)} */
-export default function StageNav() {
+/* {Renderiza: HamburgerButton (mobile), SiteMenu overlay, Desktop nav (lg+)} */
+/* {Exclusivo de: página home (/) – no reutilizar en otras secciones} */
+export default function HomeStageNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   /* {Previene scroll del body cuando el menú mobile está abierto} */
@@ -40,7 +41,7 @@ export default function StageNav() {
       {!isMenuOpen && <HamburgerButton onClick={() => setIsMenuOpen(true)} />}
 
       {/* {Overlay de menú mobile} */}
-      <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} onEscape={() => setIsMenuOpen(false)} />
+      <SiteMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} onEscape={() => setIsMenuOpen(false)} />
 
       {/* {Navegación desktop – solo visible en lg+} */}
       <div className="hidden lg:block">

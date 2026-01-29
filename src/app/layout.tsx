@@ -1,26 +1,22 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-
-import './globals.css';
 import { geistSans, geistMono, montserrat, barlowCondensed } from '@/config/fonts';
+import { buildPageMetadata } from '@/lib/metadata';
 
-/* {Tipos del layout raíz} */
+/* {Props del root layout} */
 type RootLayoutProps = {
   children: ReactNode;
 };
 
 /* {Metadata base del sitio} */
-export const metadata: Metadata = {
-  title: 'Botanic',
-  description: 'Botanic · Night Experience',
-};
+export const metadata: Metadata = buildPageMetadata('home');
 
-/* {Layout raíz de la aplicación} */
-/* {Responsable de: inyectar variables de fuentes, estilos globales, estructura HTML base} */
+/* {Root layout global} */
+/* {Responsable de: estructura HTML base (html/body), variables de fuentes globales, metadata base} */
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="es">
-      <body className={` ${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${barlowCondensed.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${barlowCondensed.variable} antialiased`}>{children}</body>
     </html>
   );
 }

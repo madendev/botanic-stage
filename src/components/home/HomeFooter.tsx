@@ -1,3 +1,6 @@
+import SocialIcon from '@/components/social/SocialIcon';
+import { socialLinks } from '@/data/social';
+
 /* {Props del componente HomeFooter} */
 type HomeFooterProps = {
   /* {Clases Tailwind adicionales} */
@@ -12,47 +15,44 @@ export default function HomeFooter({ className = '' }: HomeFooterProps) {
         <div className="flex flex-col gap-4">
           {/* {Iconos sociales} */}
           <div className="flex flex-row justify-center gap-6 lg:justify-start">
-            <a href="#" aria-label="Facebook" className="text-lg text-white/60 transition-colors duration-200 hover:text-white">
-              👍
-            </a>
-            <a href="#" aria-label="Instagram" className="text-lg text-white/60 transition-colors duration-200 hover:text-white">
-              📷
-            </a>
-            <a href="#" aria-label="TikTok" className="text-lg text-white/60 transition-colors duration-200 hover:text-white">
-              🎵
-            </a>
-            <a href="#" aria-label="WhatsApp" className="text-lg text-white/60 transition-colors duration-200 hover:text-white">
-              💬
-            </a>
-            <a href="tel:+34" className="text-lg text-white/60 transition-colors duration-200 hover:text-white">
-              ☎️
-            </a>
+            {socialLinks.map(social => (
+              <SocialIcon key={social.id} social={social} />
+            ))}
           </div>
 
           {/* {Dirección} */}
           <div className="flex flex-row justify-center lg:justify-start">
-            <address className="text-center text-xs text-white/70 not-italic lg:text-left">Avd/ Capitan Ontañon, Edif. Plaza Mayor - 11202 Algeciras</address>
+            <a
+              href="https://maps.app.goo.gl/2AHoaEBXyBWB1fFM9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent-warm text-center text-xs leading-relaxed font-normal text-white/70 no-underline transition-colors duration-300 md:text-sm lg:text-left">
+              <address className="not-italic">Avd/ Capitan Ontañon, Edif. Plaza Mayor - 11202 Algeciras</address>
+            </a>
           </div>
         </div>
 
         {/* {Columna derecha: Enlaces legales + Copyright} */}
         <div className="mt-6 flex flex-col gap-4 lg:mt-0 lg:items-end">
           {/* {Enlaces legales} */}
-          <div className="flex flex-col gap-2 text-center lg:flex-row lg:text-right">
-            <a href="#" className="text-xs text-white/60 transition-colors duration-200 hover:text-white">
+          <div className="flex flex-col gap-2 text-center lg:flex-row lg:gap-6 lg:text-right">
+            <a href="#" className="hover:text-accent-warm text-xs leading-relaxed font-normal text-white/70 transition-colors duration-300 md:text-sm">
               Política de Privacidad
             </a>
-            <a href="#" className="text-xs text-white/60 transition-colors duration-200 hover:text-white">
+            <a href="#" className="hover:text-accent-warm text-xs leading-relaxed font-normal text-white/70 transition-colors duration-300 md:text-sm">
               Términos y Condiciones
             </a>
-            <a href="#" className="text-xs text-white/60 transition-colors duration-200 hover:text-white">
+            <a href="#" className="hover:text-accent-warm text-xs leading-relaxed font-normal text-white/70 transition-colors duration-300 md:text-sm">
               Política de Cookies
             </a>
           </div>
 
           {/* {Copyright} */}
           <div className="flex flex-col gap-1 text-center lg:text-right">
-            <p className="text-xs text-white/40">Botanic Terrace &amp; Music Bar © {new Date().getFullYear()} - Diseño Web by Madendev</p>
+            <p className="flex flex-col text-xs leading-relaxed font-normal text-white/40 md:text-sm lg:flex-row">
+              Botanic Terrace &amp; Music Bar © {new Date().getFullYear()} <span className="hidden lg:block"> - </span>
+              <span>Diseño Web by Madendev</span>
+            </p>
           </div>
         </div>
       </div>

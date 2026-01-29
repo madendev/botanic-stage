@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 import WhatsAppButton from '@/components/actions/WhatsAppButton';
-import MainStage from '@/components/MainStage';
-import StageNav from '@/components/navigation/StageNav';
+import HomeStage from '@/components/home/HomeStage';
+import HomeStageNav from '@/components/home/HomeStageNav';
 import HomeFooter from '@/components/home/HomeFooter';
 import { buildPageMetadata } from '@/lib/metadata';
 
 /* {Página principal (home)} */
 /* {Orquesta los componentes principales: navegación, stage y acciones globales} */
-/* {Estructura: StageNav (fija) > MainStage (hero) > WhatsAppButton (flotante)} */
+/* {Estructura: HomeStageNav (fija) > HomeStage (hero) > WhatsAppButton (flotante)} */
 
 export const metadata: Metadata = buildPageMetadata('home');
 
@@ -16,10 +16,10 @@ export default function HomePage() {
     <>
       <main className="relative w-full">
         {/* {Navegación: desktop + mobile overlay} */}
-        <StageNav />
+        <HomeStageNav />
 
         {/* {Stage principal: logo de marca + botones de acción} */}
-        <MainStage />
+        <HomeStage />
 
         {/* {Botón flotante de WhatsApp} */}
         <WhatsAppButton />
