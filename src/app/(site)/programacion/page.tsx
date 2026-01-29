@@ -1,6 +1,6 @@
-import WhatsAppButton from "@/components/actions/WhatsAppButton";
-import MainStage from "@/components/MainStage";
-import StageNav from "@/components/navigation/StageNav";
+import WhatsAppButton from '@/components/actions/WhatsAppButton';
+import StageNav from '@/components/navigation/StageNav';
+import ProgramacionHero from '@/components/programacion/ProgramacionHero';
 
 /* {Página principal (home)} */
 /* {Orquesta los componentes principales: navegación, stage y acciones globales} */
@@ -12,7 +12,7 @@ export default function HomePage() {
       <StageNav />
 
       {/* {Stage principal: logo de marca + botones de acción} */}
-      <MainStage />
+      <ProgramacionHero />
 
       {/* {Botón flotante de WhatsApp} */}
       <WhatsAppButton />

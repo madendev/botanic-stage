@@ -9,15 +9,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp"
-      className="
-        fixed bottom-6 right-6 z-30
-        flex h-12 w-12 items-center justify-center
-        rounded-full
-        bg-black/70 text-white
-        backdrop-blur
-        transition hover:scale-105 hover:bg-black/80
-      "
-    >
+      className="fixed right-6 bottom-6 z-30 flex h-12 w-12 items-center justify-center rounded-full bg-black/70 text-white backdrop-blur transition hover:scale-105 hover:bg-black/80">
       💬
     </a>
   );

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 /* {Props del componente BrandTitle} */
-type BrandTitleProps = {
+type BrandSubtitleProps = {
   /* {Children anidados entre las etiquetas} */
   children: ReactNode;
 
@@ -12,11 +12,10 @@ type BrandTitleProps = {
   className?: string;
 };
 
-/* {BrandTitle – identidad tipográfica de marca} */
-/* {Responsable de: renderizar título con tracking premium y corrección de espaciado} */
+/* {BrandSubtitle – subtítulo con identidad de marca} */
+/* {Responsable de: renderizar subtítulo con tracking premium y corrección de espaciado} */
 /* {Usa Montserrat (font-brand) con tracking de 1em, corrigiendo último carácter} */
-/* {Reutilizable en: hero, secciones, overlays, contextos donde la identidad es prioritaria} */
-export default function BrandTitle({ children, as: Tag = 'h1', className = '' }: BrandTitleProps) {
+export default function BrandSubtitle({ children, as: Tag = 'h1', className = '' }: BrandSubtitleProps) {
   /* {Convierte children a string (si no lo es) para manipulación de caracteres} */
   const text = typeof children === 'string' ? children : 'BOTANIC';
   /* {Separa último carácter para corregir espaciado excesivo por letter-spacing} */
@@ -24,7 +23,7 @@ export default function BrandTitle({ children, as: Tag = 'h1', className = '' }:
   const last = text.slice(-1);
 
   return (
-    <Tag className={`font-brand ${className}`}>
+    <Tag className={`font-brand-sub ${className}`}>
       {base}
       {/* {Último carácter sin tracking (tracking-normal)} */}
       <span className="tracking-normal">{last}</span>

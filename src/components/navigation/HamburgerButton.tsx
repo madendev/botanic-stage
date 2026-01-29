@@ -10,18 +10,7 @@ type HamburgerButtonProps = {
 export default function HamburgerButton({ onClick }: HamburgerButtonProps) {
   return (
     <div className="fixed top-6 right-6 z-100 block lg:hidden">
-      <button
-        aria-label="Open menu"
-        onClick={onClick}
-        className="
-          font-ui
-          text-white
-          text-3xl
-          cursor-pointer
-          hover:scale-110
-          transition
-        "
-      >
+      <button aria-label="Open menu" onClick={onClick} className="font-ui cursor-pointer text-3xl text-white transition hover:scale-110">
         ☰
       </button>
     </div>

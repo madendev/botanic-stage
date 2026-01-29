@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* {===============================================} */
 /* {BOTANIC – Design Tokens & Global Styles} */
@@ -33,7 +33,6 @@
 
 /* {Estilos base del documento} */
 body {
-  min-height: 100vh;
   background: var(--bg-gradient);
   color: var(--color-text);
   font-family: var(--font-geist-sans);
@@ -51,6 +50,13 @@ body {
   letter-spacing: 1em;
   text-transform: uppercase;
   font-weight: 300;
+}
+
+.font-brand-sub {
+  font-family: var(--font-montserrat);
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 /* {UI / Navegación / Botones} */

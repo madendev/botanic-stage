@@ -1,0 +1,30 @@
+# Dependencias
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+
+# Archivos generados
+next-env.d.ts
+*.tsbuildinfo
+
+# Cache
+.eslintcache
+.prettierrc
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+*.pem
+
+# Archivos de lock (no formatear)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
