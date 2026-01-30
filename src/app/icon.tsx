@@ -1,5 +1,8 @@
 import { ImageResponse } from 'next/og';
 
+/* {Renderizar icon estáticamente} */
+export const dynamic = 'force-static';
+
 export const size = {
   width: 32,
   height: 32,
