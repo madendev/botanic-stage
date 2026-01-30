@@ -54,7 +54,12 @@ export default function SiteFooter({ className = '' }: SiteFooterProps) {
           <div className="flex flex-col gap-1 text-center lg:text-right">
             <p className="flex flex-col text-xs leading-relaxed font-normal text-white/40 md:text-sm lg:flex-row">
               Botanic Algeciras © {new Date().getFullYear()} <span className="hidden lg:block"> - </span>
-              <span>Diseño Web by Madendev</span>
+              <span>
+                Diseño Web by{' '}
+                <a href="https://manueldenis.netlify.app/" target="_blank" rel="noopener noreferrer" className="transition-colors duration-300 hover:text-white/60">
+                  @madendev
+                </a>
+              </span>
             </p>
           </div>
         </div>

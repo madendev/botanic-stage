@@ -25,13 +25,13 @@ export const socialLinks: SocialLink[] = [
   {
     id: 'instagram',
     label: 'Instagram',
-    href: 'https://instagram.com/botanicalgeciras',
+    href: 'https://instagram.com/botanic.algeciras',
     icon: InstagramIcon,
   },
   {
     id: 'tiktok',
     label: 'TikTok',
-    href: 'https://tiktok.com/@botanicalgeciras',
+    href: 'https://tiktok.com/@botanic.algeciras',
     icon: TikTokIcon,
   },
   {
