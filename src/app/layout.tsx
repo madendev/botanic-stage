@@ -1,7 +1,7 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { geistSans, geistMono, montserrat, barlowCondensed } from '@/config/fonts';
-import { buildPageMetadata } from '@/lib/metadata';
+import { buildPageMetadata, buildPageViewport } from '@/lib/metadata';
 
 /* {Props del root layout} */
 type RootLayoutProps = {
@@ -10,6 +10,9 @@ type RootLayoutProps = {
 
 /* {Metadata base del sitio} */
 export const metadata: Metadata = buildPageMetadata('home');
+
+/* {Viewport del sitio} */
+export const viewport: Viewport = buildPageViewport();
 
 /* {Root layout global} */
 /* {Responsable de: estructura HTML base (html/body), variables de fuentes globales, metadata base} */

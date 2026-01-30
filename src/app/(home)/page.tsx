@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import WhatsAppButton from '@/components/actions/WhatsAppButton';
 import HomeStage from '@/components/home/HomeStage';
 import HomeStageNav from '@/components/home/HomeStageNav';
-import HomeFooter from '@/components/home/HomeFooter';
+import HomeFooter from '@/components/common/SiteFooter';
 import { buildPageMetadata } from '@/lib/metadata';
 
 /* {Página principal (home)} */

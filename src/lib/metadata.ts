@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import { SITE_NAME } from '@/data/site';
 import { pagesData } from '@/data/pages';
 
@@ -37,4 +37,17 @@ export function buildPageMetadata(pageKey: string): Metadata {
     sectionTitle: pageData.sectionTitle,
     description: pageData.description,
   });
+}
+
+/**
+ * {Construye viewport configuration}
+ * {Define themeColor según preferencia de color del sistema}
+ */
+export function buildPageViewport(): Viewport {
+  return {
+    themeColor: [
+      { media: '(prefers-color-scheme: light)', color: '#000000' },
+      { media: '(prefers-color-scheme: dark)', color: '#ffffff' },
+    ],
+  };
 }

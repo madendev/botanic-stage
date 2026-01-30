@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import WhatsAppButton from '@/components/actions/WhatsAppButton';
-import ContactoHero from '@/components/contacto/ContactoHero';
+import PageHero from '@/components/common/PageHero';
+import SiteSection from '@/components/common/SiteSection';
 import { buildPageMetadata } from '@/lib/metadata';
 
 /* {Página: Contacto} */
@@ -11,7 +12,9 @@ export default function ContactoPage() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden">
       {/* {Hero de contacto} */}
-      <ContactoHero />
+      <SiteSection size="compact">
+        <PageHero pageKey="contacto" variant="compact" />
+      </SiteSection>
 
       {/* {Botón flotante de WhatsApp} */}
       <WhatsAppButton />

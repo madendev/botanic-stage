@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import WhatsAppButton from '@/components/actions/WhatsAppButton';
-import TerrazaHero from '@/components/terraza/TerrazaHero';
+import PageHero from '@/components/common/PageHero';
+import SiteSection from '@/components/common/SiteSection';
 import { buildPageMetadata } from '@/lib/metadata';
 
 /* {Página: Terraza} */
@@ -11,7 +12,9 @@ export default function TerrazaPage() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden">
       {/* {Hero de terraza} */}
-      <TerrazaHero />
+      <SiteSection size="compact">
+        <PageHero pageKey="terraza" variant="compact" />
+      </SiteSection>
 
       {/* {Botón flotante de WhatsApp} */}
       <WhatsAppButton />

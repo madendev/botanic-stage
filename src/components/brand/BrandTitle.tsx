@@ -5,8 +5,8 @@ type BrandTitleProps = {
   /* {Children anidados entre las etiquetas} */
   children: ReactNode;
 
-  /* {Elemento HTML semántico: h1 para hero, h2/h3 para secciones, a para enlace} */
-  as?: 'h1' | 'h2' | 'h3' | 'a';
+  /* {Elemento HTML semántico: h1 para hero, h2/h3 para secciones, a para enlace, span para navegación} */
+  as?: 'h1' | 'h2' | 'h3' | 'a' | 'span';
 
   /* {URL destino si se usa como enlace} */
   href?: string;
