@@ -3,6 +3,7 @@
 
 export interface PageData {
   key: string;
+  title?: string;
   sectionTitle?: string;
   label?: string;
   description: string;
@@ -12,65 +13,73 @@ export interface PageData {
 export const pagesData: Record<string, PageData> = {
   home: {
     key: 'home',
+    title: 'Botanic Algeciras | Música en directo, tardeo y noches',
     sectionTitle: undefined,
     label: 'Bienvenido',
-    description: 'Descubre Botanic Music, Terrace & Drinks, un espacio premium de música en vivo, cócteles y experiencias exclusivas. Tu escenario favorito.',
+    description: 'Sala de conciertos y espacio musical en Algeciras. Tardeo indie pop, noches mainstream, DJs y eventos en directo en Botanic Algeciras.',
     href: '/',
   },
 
   club: {
     key: 'club',
+    title: 'Club musical en Algeciras | Tardeo indie y noches en Botanic',
     sectionTitle: 'Music Bar',
     label: 'Club',
-    description: 'Explora nuestro music bar premium con la mejor música en vivo, cócteles artesanales y un ambiente inigualable.',
+    description: 'Vive el tardeo indie pop y las noches mainstream en Botanic Algeciras. Un club musical con identidad, DJs y cultura nocturna.',
     href: '/club',
   },
 
   contacto: {
     key: 'contacto',
+    title: 'Contacto y ubicación | Botanic Algeciras',
     sectionTitle: 'Contacto',
     label: 'Contacto',
-    description: 'Ponte en contacto con nosotros. Reservas, eventos especiales y consultas en Botanic Music, Terrace & Drinks.',
+    description: 'Encuentra cómo llegar a Botanic Algeciras, horarios y formas de contacto. Música, eventos y noches en el centro de Algeciras.',
     href: '/contacto',
   },
 
   eventosPrivados: {
     key: 'eventosPrivados',
+    title: 'Eventos privados en Algeciras | Botanic',
     sectionTitle: 'Celebraciones',
     label: 'Eventos Privados',
-    description: 'Organiza tu evento privado en Botanic Music, Terrace & Club. Cócteles personalizados, música en vivo y espacios exclusivos.',
+    description: 'Celebra tu evento privado en Botanic Algeciras. Cumpleaños, eventos de empresa, presentaciones y celebraciones con música y ambiente único.',
     href: '/eventos-privados',
   },
 
   noticias: {
     key: 'noticias',
+    title: 'Noticias y actualidad musical | Botanic Algeciras',
     sectionTitle: 'Noticias',
     label: 'Blog',
-    description: 'Mantente actualizado con las últimas noticias, eventos y novedades de Botanic Music, Terrace & Club.',
+    description: 'Descubre las últimas noticias, eventos, conciertos y novedades de Botanic Algeciras y su programación musical.',
     href: '/noticias',
   },
 
   preguntas: {
     key: 'preguntas',
+    title: 'Preguntas frecuentes | Botanic Algeciras',
     sectionTitle: 'Preguntas',
     label: 'Preguntas Frecuentes',
-    description: 'Resuelve tus dudas sobre Botanic Music, Terrace & Club, horarios, reservas y eventos.',
+    description: 'Horarios, entradas, eventos, ubicación y todo lo que necesitas saber antes de venir a Botanic Algeciras.',
     href: '/preguntas',
   },
 
   programacion: {
     key: 'programacion',
+    title: 'Programación musical en Algeciras | Botanic',
     sectionTitle: 'Programación',
     label: 'Entradas',
-    description: 'Consulta nuestra programación de música en vivo, artistas y eventos especiales en Botanic Music, Terrace & Club.',
+    description: 'Consulta la programación de conciertos, tardeo indie pop y noches con DJs en Botanic Algeciras. Agenda musical actualizada.',
     href: '/programacion',
   },
 
   terraza: {
     key: 'terraza',
+    title: 'Terraza con música en Algeciras | Botanic',
     sectionTitle: 'Terrace',
     label: 'Terraza',
-    description: 'Disfruta de nuestra terraza premium con vistas, música en vivo y ambiente exclusivo.',
+    description: 'Disfruta de la terraza de Botanic Algeciras frente al parque. Copas, música y ambiente nocturno en una de las mejores terrazas de la ciudad.',
     href: '/terraza',
   },
 };

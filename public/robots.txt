@@ -1,0 +1,6 @@
+# Botanic Algeciras - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap (agregar cuando esté disponible)
+# Sitemap: https://botanicalgeciras.com/sitemap.xml

@@ -3,15 +3,16 @@ import { SITE_NAME } from '@/data/site';
 import { pagesData } from '@/data/pages';
 
 interface MetadataConfig {
+  title?: string;
   sectionTitle?: string;
   description: string;
 }
 
-export function createMetadata({ sectionTitle, description }: MetadataConfig): Metadata {
-  const title = sectionTitle ? `${sectionTitle} | ${SITE_NAME}` : SITE_NAME;
+export function createMetadata({ title, sectionTitle, description }: MetadataConfig): Metadata {
+  const pageTitle = title || (sectionTitle ? `${sectionTitle} | ${SITE_NAME}` : SITE_NAME);
 
   return {
-    title,
+    title: pageTitle,
     description,
   };
 }
@@ -34,6 +35,7 @@ export function buildPageMetadata(pageKey: string): Metadata {
   }
 
   return createMetadata({
+    title: pageData.title,
     sectionTitle: pageData.sectionTitle,
     description: pageData.description,
   });

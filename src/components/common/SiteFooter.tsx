@@ -39,21 +39,21 @@ export default function SiteFooter({ className = '' }: SiteFooterProps) {
         <div className="mt-6 flex flex-col gap-4 lg:mt-0 lg:items-end">
           {/* {Enlaces legales} */}
           <div className="flex flex-col gap-2 text-center lg:flex-row lg:gap-6 lg:text-right">
+            <a href="/contacto" className="hover:text-accent-warm text-xs leading-relaxed font-normal text-white/70 transition-colors duration-300 md:text-sm">
+              Contacto
+            </a>
+            <a href="/preguntas" className="hover:text-accent-warm text-xs leading-relaxed font-normal text-white/70 transition-colors duration-300 md:text-sm">
+              Preguntas Frecuentes
+            </a>
             <a href="#" className="hover:text-accent-warm text-xs leading-relaxed font-normal text-white/70 transition-colors duration-300 md:text-sm">
               Política de Privacidad
-            </a>
-            <a href="#" className="hover:text-accent-warm text-xs leading-relaxed font-normal text-white/70 transition-colors duration-300 md:text-sm">
-              Términos y Condiciones
-            </a>
-            <a href="#" className="hover:text-accent-warm text-xs leading-relaxed font-normal text-white/70 transition-colors duration-300 md:text-sm">
-              Política de Cookies
             </a>
           </div>
 
           {/* {Copyright} */}
           <div className="flex flex-col gap-1 text-center lg:text-right">
             <p className="flex flex-col text-xs leading-relaxed font-normal text-white/40 md:text-sm lg:flex-row">
-              Botanic Terrace &amp; Music Bar © {new Date().getFullYear()} <span className="hidden lg:block"> - </span>
+              Botanic Algeciras © {new Date().getFullYear()} <span className="hidden lg:block"> - </span>
               <span>Diseño Web by Madendev</span>
             </p>
           </div>

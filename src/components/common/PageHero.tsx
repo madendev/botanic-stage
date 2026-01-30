@@ -29,7 +29,7 @@ export default function PageHero({ pageKey, variant = 'default' }: PageHeroProps
       {pageData.label && <p className="text-xs tracking-[0.35em] text-white/60 uppercase">{pageData.label}</p>}
 
       <div className={pageData.label ? 'mt-4' : ''}>
-        <BrandTitle as="h2" className={`font-semibold text-white ${isCompact ? 'text-lg sm:text-3xl lg:text-5xl' : 'text-4xl sm:text-5xl'}`}>
+        <BrandTitle as="h1" className={`font-semibold text-white ${isCompact ? 'text-lg sm:text-3xl lg:text-5xl' : 'text-4xl sm:text-5xl'}`}>
           {pageData.sectionTitle || pageData.key}
         </BrandTitle>
       </div>

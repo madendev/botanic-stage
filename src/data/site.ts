@@ -1,6 +1,6 @@
 /* {Configuración del sitio} */
 
-export const SITE_NAME = 'BOTANIC 🖤 ALGECIRAS';
+export const SITE_NAME = 'Botanic Algeciras';
 export const SITE_TAGLINE = 'MUSIC, TERRACE & DRINKS';
 
 export const siteConfig = {
