@@ -15,8 +15,8 @@ type SiteSectionProps = {
 /* {Responsive: mobile compacto → tablet/desktop amplio} */
 export default function SiteSection({ children, size = 'default', className = '' }: SiteSectionProps) {
   const sizeClasses = {
-    default: 'pt-0 sm:pt-0 md:pt-0 lg:pt-0',
-    compact: 'pt-0 sm:pt-0 md:pt-0 lg:pt-0',
+    default: 'py-12 md:py-16 lg:py-20',
+    compact: 'py-8 md:py-12 lg:py-16',
   };
 
   return <section className={`mx-auto w-full px-6 ${sizeClasses[size]} ${className}`}>{children}</section>;

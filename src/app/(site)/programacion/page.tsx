@@ -14,7 +14,7 @@ export const metadata: Metadata = buildPageMetadata('programacion');
 
 export default function ProgramacionPage() {
   return (
-    <main className="relative min-h-screen w-full overflow-hidden">
+    <>
       {/* {Hero de programación} */}
       <SiteSection size="compact">
         <PageHero pageKey="programacion" variant="compact" />
@@ -30,6 +30,6 @@ export default function ProgramacionPage() {
 
       {/* {Botón flotante de WhatsApp} */}
       <WhatsAppButton />
-    </main>
+    </>
   );
 }

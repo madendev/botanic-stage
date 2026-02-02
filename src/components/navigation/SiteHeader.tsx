@@ -37,18 +37,18 @@ export default function SiteHeader({ onMenuOpen }: SiteHeaderProps) {
   return (
     <header
       className={`fixed top-0 right-0 left-0 z-50 px-6 transition-[padding,background-color,backdrop-filter,border-color] duration-300 ease-out lg:px-12 ${
-        isScrolled ? 'border-b border-white/5 bg-black/40 py-3 backdrop-blur-sm' : 'border-b border-transparent bg-transparent pt-10 pb-6'
-      }`}>
+        isScrolled ? 'border-b border-white/10 bg-black/60 py-2 backdrop-blur-md md:py-3' : 'border-b border-transparent bg-transparent py-3 md:py-4 lg:py-5'
+      } flex h-14 items-center justify-center md:h-20 lg:h-20`}>
       {/* {Layout mobile: flex entre isologo y hamburger} */}
-      {/* {Layout desktop: grid de 3 columnas con logo centrado} */}
-      <div className="flex items-center justify-between md:grid md:grid-cols-3">
+      {/* {Layout desktop: flex justify-between con logo, CTA y hamburger} */}
+      <div className="flex w-full items-center justify-between">
         {/* {Mobile: BrandIsologo a la izquierda (oculto en desktop)} */}
         <Link href="/" className="flex items-center md:hidden">
           <BrandIsologoSvg className="h-8 w-auto fill-current text-white" />
         </Link>
 
         {/* {Desktop: CTA Entradas a la izquierda (oculto en mobile)} */}
-        <div className="hidden justify-start md:flex">
+        <div className="hidden md:flex">
           <ActionButton
             label={enterButton.label}
             href={enterButton.href}
@@ -59,13 +59,11 @@ export default function SiteHeader({ onMenuOpen }: SiteHeaderProps) {
         </div>
 
         {/* {Desktop: Logo Botanic centrado (oculto en mobile)} */}
-        <div className="hidden justify-center md:flex">
-          <Link href="/">
-            <BrandTitle as="span" className="text-[28px] sm:text-[34px] lg:text-[38px]">
-              Botanic
-            </BrandTitle>
-          </Link>
-        </div>
+        <Link href="/" className="hidden flex-1 items-center justify-center md:flex">
+          <BrandTitle as="span" className="pr-28 text-[28px] sm:text-[34px] lg:text-[38px]">
+            Botanic
+          </BrandTitle>
+        </Link>
 
         {/* {Hamburger button – derecha en ambos breakpoints} */}
         <div className="flex justify-end">
