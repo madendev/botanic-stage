@@ -1,25 +1,30 @@
 'use client';
 
 import { useState } from 'react';
+import { businessInfo } from '@/data/business';
 
 /* {EventosPrivadosForm – formulario específico para eventos privados} */
 /* {Responsable de: capturar solicitudes de eventos privados} */
 /* {Estilo: inputs minimalistas con línea, botón outline} */
 export default function EventosPrivadosForm() {
+  const whatsappNumber = businessInfo.whatsapp.number;
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    nombre: '',
+    apellidos: '',
+    tipoCelebracion: '',
+    diaEvento: '',
+    tramoHorario: '',
     privacy: false,
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Evento privado form:', formData);
+    const message = `Hola, vengo de ${businessInfo.siteUrl} soy ${formData.nombre} ${formData.apellidos} y quiero celebrar un ${formData.tipoCelebracion} el día ${formData.diaEvento} al ${formData.tramoHorario}.`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
     const checked = type === 'checkbox' ? (e.target as HTMLInputElement).checked : undefined;
 
@@ -39,63 +44,86 @@ export default function EventosPrivadosForm() {
         <input
           type="text"
           id="ep-name"
-          name="name"
+          name="nombre"
           required
-          value={formData.name}
+          value={formData.nombre}
           onChange={handleChange}
           className="border-b border-white/20 bg-transparent pb-3 text-base text-white placeholder-white/30 transition-colors outline-none focus:border-white/50"
-          placeholder="Tu nombre completo"
+          placeholder="Tu nombre"
         />
       </div>
 
-      {/* {Campo: Email} */}
+      {/* {Campo: Apellidos} */}
       <div className="flex flex-col gap-2">
-        <label htmlFor="ep-email" className="text-xs tracking-[0.2em] text-white/60 uppercase">
-          Email *
+        <label htmlFor="ep-lastname" className="text-xs tracking-[0.2em] text-white/60 uppercase">
+          Apellidos *
         </label>
         <input
-          type="email"
-          id="ep-email"
-          name="email"
+          type="text"
+          id="ep-lastname"
+          name="apellidos"
           required
-          value={formData.email}
+          value={formData.apellidos}
           onChange={handleChange}
           className="border-b border-white/20 bg-transparent pb-3 text-base text-white placeholder-white/30 transition-colors outline-none focus:border-white/50"
-          placeholder="tu@email.com"
+          placeholder="Tus apellidos"
         />
       </div>
 
-      {/* {Campo: Teléfono} */}
+      {/* {Campo: Tipo de celebración} */}
       <div className="flex flex-col gap-2">
-        <label htmlFor="ep-phone" className="text-xs tracking-[0.2em] text-white/60 uppercase">
-          Teléfono
+        <label htmlFor="ep-event" className="text-xs tracking-[0.2em] text-white/60 uppercase">
+          Tipo de celebración *
         </label>
         <input
-          type="tel"
-          id="ep-phone"
-          name="phone"
-          value={formData.phone}
+          type="text"
+          id="ep-event"
+          name="tipoCelebracion"
+          required
+          value={formData.tipoCelebracion}
           onChange={handleChange}
           className="border-b border-white/20 bg-transparent pb-3 text-base text-white placeholder-white/30 transition-colors outline-none focus:border-white/50"
-          placeholder="+34 600 000 000"
+          placeholder="Cumpleaños, empresa, presentación..."
         />
       </div>
 
-      {/* {Campo: Mensaje} */}
+      {/* {Campo: Día del evento} */}
       <div className="flex flex-col gap-2">
-        <label htmlFor="ep-message" className="text-xs tracking-[0.2em] text-white/60 uppercase">
-          Cuéntanos sobre tu evento *
+        <label htmlFor="ep-date" className="text-xs tracking-[0.2em] text-white/60 uppercase">
+          Día del evento *
         </label>
-        <textarea
-          id="ep-message"
-          name="message"
+        <input
+          type="date"
+          id="ep-date"
+          name="diaEvento"
           required
-          value={formData.message}
+          value={formData.diaEvento}
           onChange={handleChange}
-          rows={6}
-          className="resize-none border-b border-white/20 bg-transparent pb-3 text-base text-white placeholder-white/30 transition-colors outline-none focus:border-white/50"
-          placeholder="Tipo de evento, fecha aproximada, número de personas..."
+          className="border-b border-white/20 bg-transparent pb-3 text-base text-white placeholder-white/30 transition-colors outline-none focus:border-white/50"
         />
+      </div>
+
+      {/* {Campo: Tramo horario} */}
+      <div className="flex flex-col gap-2">
+        <label htmlFor="ep-slot" className="text-xs tracking-[0.2em] text-white/60 uppercase">
+          Tramo horario *
+        </label>
+        <select
+          id="ep-slot"
+          name="tramoHorario"
+          required
+          value={formData.tramoHorario}
+          onChange={handleChange}
+          className="border-b border-white/20 bg-transparent pb-3 text-base text-white transition-colors outline-none focus:border-white/50">
+          <option value="" disabled>
+            Selecciona un tramo
+          </option>
+          <option value="Desayuno (09 - 11)">Desayuno (09 - 11)</option>
+          <option value="Brunch (11 - 14)">Brunch (11 - 14)</option>
+          <option value="Almuerzo (14 - 17)">Almuerzo (14 - 17)</option>
+          <option value="Merienda (17 - 20)">Merienda (17 - 20)</option>
+          <option value="Cena (20 - 23)">Cena (20 - 23)</option>
+        </select>
       </div>
 
       {/* {Checkbox: Política de privacidad} */}

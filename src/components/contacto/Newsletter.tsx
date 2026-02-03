@@ -29,7 +29,7 @@ export default function Newsletter() {
   return (
     <div className="flex w-full flex-col gap-8">
       {/* {Título} */}
-      <BrandTitle as="h2" className="text-2xl font-semibold sm:text-3xl lg:text-4xl">
+      <BrandTitle as="h2" className="text-lg font-semibold sm:text-xl lg:text-2xl">
         Suscríbete a nuestra newsletter
       </BrandTitle>
 

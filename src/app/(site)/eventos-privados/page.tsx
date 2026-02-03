@@ -2,11 +2,13 @@ import { Metadata } from 'next';
 import WhatsAppButton from '@/components/actions/WhatsAppButton';
 import SiteSection from '@/components/common/SiteSection';
 import SiteFooter from '@/components/common/SiteFooter';
+import SiteParagraph from '@/components/common/SiteParagraph';
 import EventosPrivadosHero from '@/components/eventos-privados/EventosPrivadosHero';
 import EventosPrivadosForm from '@/components/eventos-privados/EventosPrivadosForm';
 import InfiniteImageCarousel from '@/components/eventos-privados/InfiniteImageCarousel';
 import BrandTitle from '@/components/brand/BrandTitle';
 import { buildPageMetadata } from '@/lib/metadata';
+import { businessInfo } from '@/data/business';
 
 /* {Página: Eventos privados} */
 /* {Estructura: Hero fullscreen > Intro > CTA > Form > Tel > Carrusel > Footer} */
@@ -14,7 +16,7 @@ import { buildPageMetadata } from '@/lib/metadata';
 export const metadata: Metadata = buildPageMetadata('eventosPrivados');
 
 export default function EventosPrivadosPage() {
-  const phone = '+34 956 12 34 56';
+  const phone = businessInfo.phone.eventos;
 
   return (
     <>
@@ -24,17 +26,17 @@ export default function EventosPrivadosPage() {
       {/* {2. Texto centrado explicativo} */}
       <SiteSection>
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-base leading-relaxed text-white/80 sm:text-lg lg:text-xl">
+          <SiteParagraph className="text-white/80 sm:text-lg lg:text-xl">
             Botanic es el escenario perfecto para tus celebraciones más especiales. Desde cumpleaños y eventos de empresa hasta presentaciones y fiestas privadas, adaptamos nuestro
             espacio a tus necesidades para crear una experiencia inolvidable.
-          </p>
+          </SiteParagraph>
         </div>
       </SiteSection>
 
       {/* {3. H2 grande centrado + CTA} */}
       <SiteSection>
         <div className="mx-auto max-w-4xl text-center">
-          <BrandTitle as="h2" className="text-3xl font-semibold sm:text-4xl lg:text-5xl">
+          <BrandTitle as="h2" className="text-xl font-semibold sm:text-2xl lg:text-3xl">
             ¿Quieres organizar algo único?
           </BrandTitle>
           <p className="mt-6 text-base text-white/70 sm:text-lg">Rellena el formulario y nos pondremos en contacto contigo para diseñar tu evento a medida</p>

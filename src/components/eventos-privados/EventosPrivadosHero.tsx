@@ -1,10 +1,10 @@
 'use client';
 
-import BrandTitle from '@/components/brand/BrandTitle';
+import PageHero from '@/components/common/PageHero';
 
 /* {EventosPrivadosHero – hero fullscreen con imagen de fondo} */
 /* {Responsable de: presentación impactante de la sección de eventos privados} */
-/* {Incluye: imagen de fondo, H1 centrado, flecha de scroll animada} */
+/* {Incluye: imagen de fondo, PageHero reutilizable, flecha de scroll animada} */
 export default function EventosPrivadosHero() {
   const scrollToContent = () => {
     window.scrollTo({
@@ -14,19 +14,18 @@ export default function EventosPrivadosHero() {
   };
 
   return (
-    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-black">
-      {/* {Imagen de fondo con overlay} */}
+    <section className="relative flex h-dvh w-full items-center justify-center overflow-hidden bg-black">
+      {/* {Video de fondo con overlay} */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
-        <div className="h-full w-full bg-gradient-to-br from-zinc-900 to-black" />
+        <video autoPlay muted loop playsInline className="h-full w-full object-cover" poster="/botanic-video-1.webm">
+          <source src="/botanic-video-1.webm" type="video/webm" />
+        </video>
+        <div className="absolute inset-0 z-10 bg-linear-to-b from-black/80 via-black/70 to-black/95" />
       </div>
 
-      {/* {Contenido central} */}
-      <div className="relative z-20 flex flex-col items-center justify-center px-6 text-center">
-        <BrandTitle as="h1" className="text-4xl font-bold sm:text-5xl lg:text-7xl">
-          Eventos Privados
-        </BrandTitle>
-        <p className="mt-6 max-w-2xl text-base text-white/70 sm:text-lg lg:text-xl">Celebra tus momentos especiales en un espacio único</p>
+      {/* {Contenido central - reutiliza PageHero} */}
+      <div className="relative z-20 flex h-dvh w-full items-center justify-center">
+        <PageHero pageKey="eventosPrivados" variant="compact" className="my-0! justify-center! py-0!" />
       </div>
 
       {/* {Flecha de scroll animada} */}

@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-
 /* {Props del componente FaqItem} */
 type FaqItemProps = {
   /* {ID único de la pregunta} */
@@ -32,7 +30,7 @@ export default function FaqItem({ id, question, answer, isOpen, onToggle }: FaqI
         <span className="text-base font-medium text-white/90 sm:text-lg">{question}</span>
 
         {/* {Icono +/- } */}
-        <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center text-xl text-white/60">{isOpen ? '−' : '+'}</span>
+        <span className="flex h-6 w-6 shrink-0 items-center justify-center text-xl text-white/60">{isOpen ? '−' : '+'}</span>
       </button>
 
       {/* {Respuesta con animación} */}

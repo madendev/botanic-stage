@@ -1,5 +1,6 @@
 import BrandTitle from '@/components/brand/BrandTitle';
 import BrandIsologoSvg from '@/components/brand/BrandIsologoSvg';
+import SiteParagraph from '@/components/common/SiteParagraph';
 import { pagesData } from '@/data/pages';
 
 /* {Props del componente PageHero} */
@@ -8,12 +9,14 @@ type PageHeroProps = {
   pageKey: string;
   /* {Variante: default (min-h-screen) o compact (min-h-[50vh])} */
   variant?: 'default' | 'compact';
+  /* {Clases adicionales para personalización} */
+  className?: string;
 };
 
 /* {PageHero – componente hero genérico y reutilizable} */
 /* {Responsable de: renderizar hero con datos centralizados de pagesData} */
 /* {Obtiene sectionTitle y description automáticamente} */
-export default function PageHero({ pageKey, variant = 'default' }: PageHeroProps) {
+export default function PageHero({ pageKey, variant = 'default', className = '' }: PageHeroProps) {
   const pageData = pagesData[pageKey];
 
   if (!pageData) {
@@ -25,7 +28,7 @@ export default function PageHero({ pageKey, variant = 'default' }: PageHeroProps
 
   return (
     <section
-      className={`mx-auto flex w-full max-w-5xl flex-col justify-end ${isCompact ? 'my-8 min-h-[35vh] items-center text-center sm:min-h-[25vh] md:mb-12 md:min-h-[35vh]' : 'min-h-screen items-start'}`}>
+      className={`${className} mx-auto flex w-full max-w-5xl flex-col justify-end ${isCompact ? 'my-8 min-h-[35vh] items-center text-center sm:min-h-[25vh] md:mb-12 md:min-h-[35vh]' : 'min-h-screen items-start'}`}>
       {pageData.label && <p className="text-xs tracking-[0.35em] text-white/60 uppercase">{pageData.label}</p>}
 
       <div className={pageData.label ? 'mt-4' : ''}>
@@ -34,7 +37,7 @@ export default function PageHero({ pageKey, variant = 'default' }: PageHeroProps
         </BrandTitle>
       </div>
 
-      {pageData.description && <p className={`max-w-xl text-sm text-white/70 ${pageData.label ? 'mt-4' : 'mt-2'}`}>{pageData.description}</p>}
+      {pageData.description && <SiteParagraph className={`max-w-xl ${pageData.label ? 'mt-4' : 'mt-2'}`}>{pageData.description}</SiteParagraph>}
 
       <div className="mt-6 flex w-full justify-center">
         <BrandIsologoSvg className="h-8 w-auto fill-current text-white/70" />

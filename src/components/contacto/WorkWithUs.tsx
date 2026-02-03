@@ -1,15 +1,16 @@
 import BrandTitle from '@/components/brand/BrandTitle';
+import { businessInfo } from '@/data/business';
 
 /* {WorkWithUs – bloque de reclutamiento} */
 /* {Responsable de: invitar a candidatos a enviar CV} */
 /* {Estilo: texto editorial, botón outline} */
 export default function WorkWithUs() {
-  const cvEmail = 'rrhh@botanicalgeciras.com';
+  const cvEmail = businessInfo.email.rrhh;
 
   return (
     <div className="flex w-full flex-col gap-6">
       {/* {Título} */}
-      <BrandTitle as="h2" className="text-2xl font-semibold sm:text-3xl lg:text-4xl">
+      <BrandTitle as="h2" className="text-lg font-semibold sm:text-xl lg:text-2xl">
         Trabaja con nosotros
       </BrandTitle>
 

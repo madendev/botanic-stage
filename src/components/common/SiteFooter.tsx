@@ -1,5 +1,6 @@
 import SocialIcon from '@/components/social/SocialIcon';
 import { socialLinks } from '@/data/social';
+import { businessInfo } from '@/data/business';
 
 /* {Componente: Footer del Sitio} */
 /* {Reutilizable en todas las páginas del sitio} */
@@ -26,19 +27,19 @@ export default function SiteFooter({ className = '' }: SiteFooterProps) {
           {/* {Dirección} */}
           <div className="flex flex-row justify-center lg:justify-start">
             <a
-              href="https://maps.app.goo.gl/2AHoaEBXyBWB1fFM9"
+              href={businessInfo.maps.mainUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-accent-warm text-center text-xs leading-relaxed font-normal text-white/70 no-underline transition-colors duration-300 md:text-sm lg:text-left">
-              <address className="not-italic">Avd/ Capitan Ontañon, Edif. Plaza Mayor - 11202 Algeciras</address>
+              <address className="not-italic">{businessInfo.address.main}</address>
             </a>
           </div>
         </div>
 
         {/* {Columna derecha: Enlaces legales + Copyright} */}
-        <div className="mt-6 flex flex-col gap-4 lg:mt-0 lg:items-end">
+        <div className="mt-4 flex flex-col items-center gap-4 lg:mt-0 lg:items-end">
           {/* {Enlaces legales} */}
-          <div className="flex flex-col gap-2 text-center lg:flex-row lg:gap-6 lg:text-right">
+          <div className="flex flex-row items-center gap-2 text-center sm:flex-row sm:gap-6">
             <a href="/contacto" className="hover:text-accent-warm text-xs leading-relaxed font-normal text-white/70 transition-colors duration-300 md:text-sm">
               Contacto
             </a>
@@ -52,8 +53,8 @@ export default function SiteFooter({ className = '' }: SiteFooterProps) {
 
           {/* {Copyright} */}
           <div className="flex flex-col gap-1 text-center lg:text-right">
-            <p className="flex flex-col text-xs leading-relaxed font-normal text-white/40 md:text-sm lg:flex-row">
-              Botanic Algeciras © {new Date().getFullYear()} <span className="hidden lg:block"> - </span>
+            <p className="flex flex-row gap-4 text-xs leading-relaxed font-normal text-white/40 md:text-sm lg:flex-row">
+              Botanic Algeciras © {new Date().getFullYear()}
               <span>
                 Diseño Web by{' '}
                 <a href="https://manueldenis.netlify.app/" target="_blank" rel="noopener noreferrer" className="transition-colors duration-300 hover:text-white/60">

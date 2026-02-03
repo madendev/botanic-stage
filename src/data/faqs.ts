@@ -12,7 +12,7 @@ export const faqs: Faq[] = [
     id: 'horarios',
     question: '¿Cuáles son los horarios de apertura?',
     answer:
-      'Botanic abre de jueves a sábado. Los jueves y viernes abrimos a las 22:00h hasta las 03:00h. Los sábados abrimos a las 18:00h para el tardeo y cerramos a las 05:00h. Los horarios pueden variar según eventos especiales.',
+      'Botanic abre todos los dias. De lunes a viernes a las 8:30 y sabados y domingo a las 9:00. Viernes, Sabados y visperas de festivos cerramos a las 4:00 y el resto de dias a las 03:00. Los horarios pueden variar según eventos especiales.',
   },
   {
     id: 'entradas',
@@ -47,8 +47,7 @@ export const faqs: Faq[] = [
   {
     id: 'parking',
     question: '¿Hay aparcamiento cercano?',
-    answer:
-      'Botanic está ubicado en el centro de Algeciras con varias opciones de aparcamiento público en las inmediaciones. Te recomendamos llegar con tiempo o utilizar transporte público o taxi para mayor comodidad.',
+    answer: 'Botanic está ubicado en el centro de Algeciras con varias opciones de aparcamiento público en las inmediaciones.',
   },
   {
     id: 'consumicion',

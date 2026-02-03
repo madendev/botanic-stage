@@ -1,17 +1,18 @@
 import BrandTitle from '@/components/brand/BrandTitle';
+import { businessInfo } from '@/data/business';
 
 /* {ContactLocation – información de ubicación y contacto} */
 /* {Responsable de: mostrar dirección física, mapa y teléfono} */
 /* {Estilo: tipografía grande, botones outline} */
 export default function ContactLocation() {
-  const address = 'Calle Alfonso XI, 8, 11201 Algeciras, Cádiz';
-  const phone = '+34 603 71 30 00';
-  const mapsUrl = 'https://maps.google.com/?q=Botanic+Algeciras';
+  const address = businessInfo.address.contact;
+  const phone = businessInfo.phone.main;
+  const mapsUrl = businessInfo.maps.contactUrl;
 
   return (
     <div className="flex w-full flex-col gap-8">
       {/* {Título} */}
-      <BrandTitle as="h2" className="text-2xl font-semibold sm:text-3xl lg:text-4xl">
+      <BrandTitle as="h2" className="text-lg font-semibold sm:text-xl lg:text-2xl">
         Encuéntranos
       </BrandTitle>
 

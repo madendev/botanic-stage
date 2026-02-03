@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { businessInfo } from '@/data/business';
 
 /* {ContactForm – formulario de contacto estilo editorial} */
 /* {Responsable de: capturar nombre, email, teléfono y mensaje del usuario} */
@@ -16,8 +17,9 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // {Lógica de envío pendiente}
-    console.log('Form submitted:', formData);
+    const message = `Hola, vengo de ${businessInfo.siteUrl}. Soy ${formData.name}${formData.phone ? `, mi teléfono es ${formData.phone}` : ''} y quiero contactar por lo siguiente: ${formData.message}`;
+    const whatsappUrl = `https://wa.me/${businessInfo.whatsapp.number}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -122,7 +124,7 @@ export default function ContactForm() {
       <button
         type="submit"
         className="w-full border border-white/30 py-4 text-sm font-medium tracking-[0.2em] text-white uppercase transition-colors hover:border-white hover:bg-white/5 sm:w-auto sm:px-12">
-        Enviar
+        Contactar por WhatsApp
       </button>
     </form>
   );

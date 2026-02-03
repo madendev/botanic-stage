@@ -6,6 +6,7 @@ import BrandLogo from '../brand/BrandLogo';
 import SocialIcon from '@/components/social/SocialIcon';
 import { ctaButtons, mobileNavLinks } from '@/data/navigation';
 import { socialLinks } from '@/data/social';
+import { businessInfo } from '@/data/business';
 
 /* {Props del menú overlay} */
 type SiteMenuProps = {
@@ -102,11 +103,11 @@ export default function SiteMenu({ isOpen, onClose, onEscape }: SiteMenuProps) {
         <div className="flex w-full flex-col items-center gap-4 sm:gap-6">
           {/* {Dirección} */}
           <a
-            href="https://maps.app.goo.gl/2AHoaEBXyBWB1fFM9"
+            href={businessInfo.maps.mainUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-accent-warm text-center text-xs leading-relaxed font-normal text-white/70 transition-colors duration-300">
-            <address className="not-italic">Avd/ Capitan Ontañon, Edif. Plaza Mayor - 11202 Algeciras</address>
+            <address className="not-italic">{businessInfo.address.main}</address>
           </a>
 
           {/* {Iconos de redes sociales} */}

@@ -7,6 +7,7 @@ import TwitchIcon from '@/components/icons/TwitchIcon';
 import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 import SpotifyIcon from '@/components/icons/SpotifyIcon';
 import MapsIcon from '@/components/icons/MapsIcon';
+import { businessInfo } from '@/data/business';
 
 export interface SocialLink {
   id: string;
@@ -43,7 +44,7 @@ export const socialLinks: SocialLink[] = [
   {
     id: 'whatsapp',
     label: 'WhatsApp',
-    href: 'https://wa.me/34603713000?text=Hola%20vengo%20desde%20el%20sitio%20web%20oficial%20y%20necesito%20informacion%20sobre...',
+    href: businessInfo.whatsapp.url,
     icon: WhatsAppIcon,
   },
   {
@@ -55,7 +56,7 @@ export const socialLinks: SocialLink[] = [
   {
     id: 'maps',
     label: 'Google Maps',
-    href: 'https://maps.app.goo.gl/2AHoaEBXyBWB1fFM9',
+    href: businessInfo.maps.mainUrl,
     icon: MapsIcon,
   },
 ];

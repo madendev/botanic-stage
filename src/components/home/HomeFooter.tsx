@@ -1,5 +1,6 @@
 import SocialIcon from '@/components/social/SocialIcon';
 import { socialLinks } from '@/data/social';
+import { businessInfo } from '@/data/business';
 
 /* {Props del componente HomeFooter} */
 type HomeFooterProps = {
@@ -23,11 +24,11 @@ export default function HomeFooter({ className = '' }: HomeFooterProps) {
           {/* {Dirección} */}
           <div className="flex flex-row justify-center lg:justify-start">
             <a
-              href="https://maps.app.goo.gl/2AHoaEBXyBWB1fFM9"
+              href={businessInfo.maps.mainUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-accent-warm text-center text-xs leading-relaxed font-normal text-white/70 no-underline transition-colors duration-300 md:text-sm lg:text-left">
-              <address className="not-italic">Avd/ Capitan Ontañon, Edif. Plaza Mayor - 11202 Algeciras</address>
+              <address className="not-italic">{businessInfo.address.main}</address>
             </a>
           </div>
         </div>

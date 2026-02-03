@@ -1,4 +1,5 @@
 /* {Tipos para los datos de navegación} */
+import { businessInfo } from '@/data/business';
 export type NavLink = {
   href: string;
   label: string;
@@ -19,7 +20,7 @@ export const ctaButtons: CTAButton[] = [
     variant: 'primary',
   },
   {
-    href: 'https://wa.me/XXXXXXXXX',
+    href: businessInfo.whatsapp.url,
     label: 'RESERVAS',
     variant: 'secondary',
     target: '_blank',

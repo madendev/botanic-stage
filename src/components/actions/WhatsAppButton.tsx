@@ -1,4 +1,5 @@
 import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
+import { businessInfo } from '@/data/business';
 
 /* {WhatsAppButton – botón flotante de contacto} */
 /* {Responsable de: enlace directo a WhatsApp} */
@@ -7,7 +8,7 @@ import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/34603713000?text=Hola%20vengo%20desde%20el%20sitio%20web%20oficial%20y%20necesito%20informacion%20sobre..."
+      href={businessInfo.whatsapp.url}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp"
